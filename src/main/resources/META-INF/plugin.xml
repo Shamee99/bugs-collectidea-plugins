@@ -1,0 +1,29 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.ruijie.ide.plugins.bug-collect</id>
+
+    <name>BugsCollect</name>
+
+    <vendor email="pengyaohuang@ruijie.com.cn" url="https://www.ruijie.com.cn">Ruijie</vendor>
+
+    <description>
+        <![CDATA[
+            Common odor codes can be added to the bug collection system with the right mouse button
+          ]]>
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="BugsCollectPluginId" class="com.ruijie.plugins.bugscollect.action.EditorBugsPopupAction"
+                text="添加Bug代码" description="右击添加该选中代码记录bug系统">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt B"/>
+        </action>
+    </actions>
+</idea-plugin>
